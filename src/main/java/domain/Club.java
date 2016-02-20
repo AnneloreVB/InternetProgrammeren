@@ -6,7 +6,7 @@
 package domain;
 
 import java.util.ArrayList;
-import domain.*;
+
 
 public class Club {
     
@@ -16,17 +16,17 @@ public class Club {
         lidService = new PersonService();
     }
     
-    public void addPerson(Person p) throws DomainException{
+    public void addPerson(Person p){
         lidService.add(p);
         //lidService.addDB(p);
     }
     
-    public void removeLid(int id) throws DomainException {
+    public void removeLid(int id){
         lidService.remove(id);
         //lidService.removeDB(id);
     }
     
-    public void editLid(String rijksregistersnr, String naam, String voornaam, Adres adres, boolean heeftBetaald) throws DomainException{
+    public void editLid(String rijksregistersnr, String naam, String voornaam, Adres adres, boolean heeftBetaald){
         Person pers = new Person( rijksregistersnr, naam, voornaam, adres);
         lidService.edit(pers);
         //lidService.editDB(pers);
@@ -36,7 +36,7 @@ public class Club {
         //return lidService.getAllDB();
     }
     
-    public void betaal(String naam, String voornaam) throws DomainException{
+    public void betaal(String naam, String voornaam){
         lidService.betaal(naam, voornaam);
         //lidService.betaalDB(naam,voornaam);
     }

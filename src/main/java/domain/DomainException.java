@@ -15,6 +15,7 @@ public class DomainException extends RuntimeException{
     public DomainException(String message){
         setMessage(message);
     }
+    @Override
     public String getMessage(){
         return message;
     }

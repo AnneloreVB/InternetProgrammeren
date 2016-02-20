@@ -17,14 +17,14 @@ public class Adres {
     private int postcode;
     private String gemeente;
     
-    public Adres(String straat,int huisnr,String bus,int postcode,String gemeente) throws DomainException{
+    public Adres(String straat,int huisnr,String bus,int postcode,String gemeente){
         setStraat(straat);
         setHuisnr(huisnr);
         setBus(bus);
         setPostcode(postcode);
         setGemeente(gemeente);
     }
-    public Adres(String straat,int huisnr,int postcode,String gemeente) throws DomainException{
+    public Adres(String straat,int huisnr,int postcode,String gemeente){
         this(straat,huisnr,null,postcode,gemeente);
     }
 
@@ -32,7 +32,7 @@ public class Adres {
         return straat;
     }
 
-    private void setStraat(String straat) throws DomainException {
+    private void setStraat(String straat){
         if(straat == null){
             throw new DomainException("geef geldige straat in");
         }
@@ -43,7 +43,7 @@ public class Adres {
         return huisnr;
     }
 
-    private void setHuisnr(int huisnr) throws DomainException {
+    private void setHuisnr(int huisnr){
        if(huisnr == 0){
            throw new DomainException("geef geldig huisnr in");
        }
@@ -61,7 +61,7 @@ public class Adres {
     public int getPostcode() {
         return postcode;
     }
-    private void setPostcode(int postcode) throws DomainException {
+    private void setPostcode(int postcode){
         if(postcode == 0){
             throw new DomainException("geef een geldige postcode in");
         }
@@ -72,7 +72,7 @@ public class Adres {
         return gemeente;
     }
 
-    private void setGemeente(String gemeente) throws DomainException {
+    private void setGemeente(String gemeente){
         if(gemeente == null){
             throw new DomainException("geef geldige gemeente in");
         }

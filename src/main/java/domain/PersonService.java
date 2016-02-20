@@ -38,7 +38,7 @@ public class PersonService {
     public void removeDB(int id){
         
     }
-    public void edit(Person p) throws DomainException{
+    public void edit(Person p){
         if(p == null){
             throw new DomainException("geef een geldige person in");
         }
