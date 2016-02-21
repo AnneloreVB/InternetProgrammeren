@@ -5,7 +5,7 @@
  */
 package domain;
 
-import java.util.ArrayList;
+import java.util.List;
 
 
 public class Club {
@@ -31,7 +31,7 @@ public class Club {
         lidService.edit(pers);
         //lidService.editDB(pers);
     }
-    public ArrayList<Person> getAllLid(){
+    public List<Person> getAllLid(){
         return lidService.getAll();
         //return lidService.getAllDB();
     }

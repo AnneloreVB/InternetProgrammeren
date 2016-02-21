@@ -18,7 +18,7 @@ public class Lid extends Person {
    }
    
    
-    protected void betaal(){
+    public void betaal(){
         this.heeftBetaald = true;
     }
     protected void resetBetaling(){
