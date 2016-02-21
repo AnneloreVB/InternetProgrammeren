@@ -12,7 +12,7 @@ public class Person {
     private Adres adres;
     
     public Person(String rijksregisternr,String naam, String voornaam, Adres adres){
-        setRijksregistersnr(rijksregistersnr);
+        setRijksregistersnr(rijksregisternr);
         setNaam(naam);
         setVoornaam(voornaam);
         setAdres(adres);
@@ -22,24 +22,36 @@ public class Person {
         return naam;
     }
     private void setNaam(String naam) {
+        if(naam == null){
+            throw new DomainException("geef geldige naam in");
+        }
         this.naam = naam;
     }
     public String getVoornaam() {
         return voornaam;
     }
     private void setVoornaam(String voornaam) {
+        if(voornaam == null){
+            throw new DomainException("geef geldige voornaam in");
+        }
         this.voornaam = voornaam;
     }
      public Adres getAdres() {
         return adres;
     }
     private void setAdres(Adres adres) {
+        if(adres == null){
+            throw new DomainException("geef geldig adres in");
+        }
         this.adres = adres;
     }
     public String getrRijksregistersnr() {
         return rijksregistersnr;
     }
     private void setRijksregistersnr(String rijksregistersnr) {
+        if(rijksregistersnr == null){
+            throw new DomainException("geef geldig rijksregistersnr in");
+        }
         this.rijksregistersnr = rijksregistersnr;
     }
 }

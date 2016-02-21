@@ -9,6 +9,7 @@ import domain.DomainException;
 import domain.Lid;
 import domain.Person;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,8 +34,8 @@ public class PersonRepositoryMap implements PersonRepository {
     }
 
     @Override
-    public List<Person> getAll() {
-        return (ArrayList)persons.values();
+    public Collection<Person> getAll() {
+        return  persons.values();
     }
 
     @Override

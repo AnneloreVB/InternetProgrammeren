@@ -19,8 +19,7 @@ import static org.junit.Assert.*;
 public class PersonTest {
     
     Adres geldigAdres = new Adres("Vlostraat",12,"B",1000,"Brussel");
-    Adres nietGeldigAdres = new Adres("Vlostraat",0,"B",1000,"Brussel");
-    Person geldigeP = new Person("brr","Jansens","Jan",geldigAdres);
+    Person geldigeP = new Person("nummer","Jansens","Jan",geldigAdres);
     
     public PersonTest() {
     }
@@ -35,6 +34,7 @@ public class PersonTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -64,7 +64,7 @@ public class PersonTest {
     }
     @Test (expected = DomainException.class)
     public void test_Constructor_Works_With_adres_Is_niet_geldig(){
-        Person p = new Person("brr","Jansens","Jan",nietGeldigAdres);
+        Person p = new Person("brr","Jansens","Jan",null);
     }
     @Test 
     public void test_Constructor_Works(){

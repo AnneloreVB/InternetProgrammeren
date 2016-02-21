@@ -5,6 +5,7 @@
  */
 package domain;
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -17,21 +18,29 @@ public class Club {
     }
     
     public void addPerson(Person p){
+        if(p == null){
+            throw new DomainException("geef geldige persoon op");
+        }
         lidService.add(p);
-        //lidService.addDB(p);
+        
     }
     
-    public void removeLid(int id){
+    public void removePerson(int id){
         lidService.remove(id);
-        //lidService.removeDB(id);
+        
     }
     
-    public void editLid(String rijksregistersnr, String naam, String voornaam, Adres adres, boolean heeftBetaald){
-        Person pers = new Person( rijksregistersnr, naam, voornaam, adres);
-        lidService.edit(pers);
+    public void editPerson(Person p){
+        if(p == null){
+            throw new DomainException("geef geldige persoon op");
+        }
+        lidService.edit(p);
         //lidService.editDB(pers);
     }
-    public List<Person> getAllLid(){
+    public Person getPerson(int id){
+        return lidService.getPerson(id);
+    }
+    public Collection<Person> getAllLid(){
         return lidService.getAll();
         //return lidService.getAllDB();
     }

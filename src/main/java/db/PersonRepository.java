@@ -6,6 +6,7 @@
 package db;
 
 import domain.Person;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public interface PersonRepository {
     
     Person get(int id);
 
-    List<Person> getAll();
+    Collection<Person> getAll();
 
     void add(Person person);
 
