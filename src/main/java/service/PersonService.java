@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package service;
 
 import db.PersonRepository;
 import db.PersonRepositoryMap;
+import domain.DomainException;
+import domain.Person;
 import java.util.Collection;
 import java.util.List;
 
