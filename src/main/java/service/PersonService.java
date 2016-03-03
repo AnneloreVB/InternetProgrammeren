@@ -6,22 +6,26 @@
 package service;
 
 import db.PersonRepository;
+import db.PersonRepositoryFactory;
 import db.PersonRepositoryMap;
+import db.TypeDB;
 import domain.DomainException;
 import domain.Person;
-import java.util.Collection;
-import java.util.List;
+import java.util.ArrayList;
+
 
 
 public class PersonService {
     
-    PersonRepository repository;
+    private PersonRepositoryFactory factory;
+    private PersonRepository repository;
     
     public PersonService(){
-        repository = new PersonRepositoryMap();
+        factory =  new PersonRepositoryFactory();
+        repository = factory.getRepository(TypeDB.PersonMap);
     }
-    public Person getPerson(int id){
-        return repository.get(id);
+    public Person getPerson(String rijksregisternr){
+        return repository.get(rijksregisternr);
     }
     public void add(Person p){
         if(p == null){
@@ -29,8 +33,8 @@ public class PersonService {
         }
         repository.add(p);
     }
-    public void remove(int id){
-        repository.delete(id);
+    public void remove(String rijksregisternr){
+        repository.delete(rijksregisternr);
     }
     
     public void edit(Person p){
@@ -39,7 +43,7 @@ public class PersonService {
         } 
         repository.update(p);
     }
-    public Collection<Person> getAll(){
+    public ArrayList<Person> getAll(){
         return repository.getAll();
     }
     public void betaal(String naam, String voornaam){

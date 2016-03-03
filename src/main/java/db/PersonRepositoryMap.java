@@ -6,12 +6,10 @@
 package db;
 
 import domain.DomainException;
-import domain.Lid;
+import domain.Member;
 import domain.Person;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,22 +18,21 @@ import java.util.Map;
  */
 public class PersonRepositoryMap implements PersonRepository {
     
-    Map<Integer,Person> persons;
-    private int lastUsedId;
+    private static Map<String,Person> persons;
+    
             
     public PersonRepositoryMap(){
-         persons = new HashMap<Integer,Person>();
-         lastUsedId = 0;
+         persons = new HashMap<String,Person>();
     }
     
     @Override
-    public Person get(int id) {
-        return persons.get(id);
+    public Person get(String rijksregisternr) {
+        return persons.get(rijksregisternr);
     }
 
     @Override
-    public Collection<Person> getAll() {
-        return  persons.values();
+    public ArrayList<Person> getAll() {
+        return new ArrayList( persons.values());
     }
 
     @Override
@@ -44,54 +41,38 @@ public class PersonRepositoryMap implements PersonRepository {
             throw new DomainException("geef een geldige Person in");
         }
         if(!persons.containsValue(p)){
-           persons.put(generateNewId(), p);
-           setLastUsedId(generateNewId());
+           persons.put(p.getrRijksregistersnr(), p);
         }
     }
-
-    @Override
     public void update(Person p) {
         if(p == null){
             throw new DomainException("geef een geldige person in");
         }
         
         for(Person pers : persons.values()){
-            if(pers.getVoornaam().equals(p.getVoornaam())&& pers.getNaam().equals(p.getNaam())){
+            if(pers.getrRijksregistersnr().equals(p.getrRijksregistersnr())){
                 pers = p;
             }
         }
     }
-    public void delete(int id) {
-         if(id == 0){
+    public void delete(String rijksregisternr) {
+         if(rijksregisternr == null){
             throw new DomainException("geef geldige Person in");
         }
-        persons.remove(id);
+        persons.remove(rijksregisternr);
     }
-    public int getLastUsedId(){
-        return this.lastUsedId;
-    }
-    private void setLastUsedId(int id) {
-        this.lastUsedId = id;
-    }
-    @Override
-    public int generateNewId(){
-        return getLastUsedId()+1;
-    }
-    
     public void betaal(String naam, String voornaam){
         if(naam == null || voornaam == null){
             throw new DomainException("geef een geldig lid in");
         }
         for(Person p: persons.values()){
             if(p.getVoornaam().equals(voornaam)&& p.getNaam().equals(naam)){
-                if(p instanceof Lid){
-                    Lid l = (Lid) p;
+                if(p instanceof Member){
+                    Member l = (Member) p;
                     l.betaal();
                 }
             }
         }
     }
-
-    
 
 }

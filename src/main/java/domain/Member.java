@@ -5,14 +5,14 @@
  */
 package domain;
 
-public class Lid extends Person {
+public class Member extends Person {
    private String rijksregistersnr;
    private String naam;
    private String voornaam;
-   private Adres adres;
+   private Address adres;
    private boolean heeftBetaald;
    
-   public Lid(String rijksregisternr, String naam, String voornaam, Adres adres, boolean heeftBetaald){
+   public Member(String rijksregisternr, String naam, String voornaam, Address adres, boolean heeftBetaald){
       super(rijksregisternr, naam,voornaam,adres);
        this.heeftBetaald = heeftBetaald;
    }

@@ -6,16 +6,18 @@
 package domain;
 
 public class Person {
+    
     private String rijksregistersnr;
     private String naam;
     private String voornaam;
-    private Adres adres;
+    private Address adres;
     
-    public Person(String rijksregisternr,String naam, String voornaam, Adres adres){
+    public Person(String rijksregisternr,String naam, String voornaam, Address adres){
         setRijksregistersnr(rijksregisternr);
         setNaam(naam);
         setVoornaam(voornaam);
         setAdres(adres);
+        
     }
 
     public String getNaam() {
@@ -36,10 +38,10 @@ public class Person {
         }
         this.voornaam = voornaam;
     }
-     public Adres getAdres() {
+     public Address getAdres() {
         return adres;
     }
-    private void setAdres(Adres adres) {
+    private void setAdres(Address adres) {
         if(adres == null){
             throw new DomainException("geef geldig adres in");
         }
@@ -54,4 +56,6 @@ public class Person {
         }
         this.rijksregistersnr = rijksregistersnr;
     }
+   
+    
 }

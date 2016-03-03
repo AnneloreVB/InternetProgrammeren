@@ -16,10 +16,11 @@ import static org.junit.Assert.*;
  *
  * @author Annelore pc
  */
-public class LidTest {
+public class MemberTest {
     
-    Adres gedigAdres = new Adres("Vlostraat",12,"B",1000,"Brussel");
-    public LidTest() {
+    Address gedigAdres = new Address("Vlostraat",12,"B",1000,"Brussel");
+    Member geldigeMember = new Member("brr","Jansens","Jan",gedigAdres,false);
+    public MemberTest() {
     }
     
     @BeforeClass
@@ -47,19 +48,16 @@ public class LidTest {
     
     @Test 
     public void test_Constructor_Works_With_isBetaald_Is_false(){
-        Lid l = new Lid("brr","Jansens","Jan",gedigAdres,false);
-        assertEquals(false,l.heeftBetaald());
+        assertEquals(false,geldigeMember.heeftBetaald());
     }
     @Test 
     public void test_Betaal_werkt(){
-        Lid l = new Lid(null,"Jansens","Jan",gedigAdres,false);
-        l.betaal();
-        assertEquals(true,l.heeftBetaald());
+        geldigeMember.betaal();
+        assertEquals(true,geldigeMember.heeftBetaald());
     }
     @Test 
     public void test_resetbetaling_werkt(){
-        Lid l = new Lid(null,"Jansens","Jan",gedigAdres,true);
-        l.resetBetaling();
-        assertEquals(false,l.heeftBetaald());
+        geldigeMember.resetBetaling();
+        assertEquals(false,geldigeMember.heeftBetaald());
     }
 }

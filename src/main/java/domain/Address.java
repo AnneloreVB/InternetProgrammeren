@@ -5,26 +5,23 @@
  */
 package domain;
 
-/**
- *
- * @author Annelore pc
- */
-public class Adres {
+public class Address {
     
     private String straat;
     private int huisnr;
     private String bus;
     private int postcode;
     private String gemeente;
+    private static int id;
     
-    public Adres(String straat,int huisnr,String bus,int postcode,String gemeente){
+    public Address(String straat,int huisnr,String bus,int postcode,String gemeente){
         setStraat(straat);
         setHuisnr(huisnr);
         setBus(bus);
         setPostcode(postcode);
         setGemeente(gemeente);
     }
-    public Adres(String straat,int huisnr,int postcode,String gemeente){
+    public Address(String straat,int huisnr,int postcode,String gemeente){
         this(straat,huisnr,null,postcode,gemeente);
     }
 
@@ -78,6 +75,22 @@ public class Adres {
         }
         this.gemeente = gemeente;
     }
-    
-    
+    public void setId(int id){
+        this.id = id;
+    }
+    public int getId(){
+        return this.getId();
+    }
+    public boolean equals(Object o){
+        if(o instanceof Address){
+            Address a = (Address) o;
+            if(a.getStraat().equals(this.getStraat()) 
+                    && a.getHuisnr()== this.getHuisnr()
+                    && this.getBus().equals(a.getBus())
+                    && this.getPostcode() == a.getPostcode()){
+                return true;
+            }
+        }
+        return false;
+    }
 }

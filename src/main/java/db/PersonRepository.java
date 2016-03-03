@@ -6,6 +6,7 @@
 package db;
 
 import domain.Person;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,18 +16,17 @@ import java.util.List;
  */
 public interface PersonRepository {
     
-    Person get(int id);
+    Person get(String rijksregisternr);
 
-    Collection<Person> getAll();
+    ArrayList<Person> getAll();
 
     void add(Person person);
 
     void update(Person person);
 
-    void delete(int id);
+    void delete(String rijksregisternr);
     
-    int getLastUsedId();
-    int generateNewId();
+    
     
     void betaal(String s, String s1);
 }
