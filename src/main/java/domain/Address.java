@@ -93,4 +93,11 @@ public class Address {
         }
         return false;
     }
+    public String toString(){
+        if(this.getBus() == null){
+            return this.getStraat()+ " "+ this.getHuisnr()+ " "+ this.getPostcode()+" "+this.getGemeente();
+        }
+        return this.getStraat()+ " "+ this.getHuisnr()+ " "+ this.getBus()+" "+ this.getPostcode()+" "+this.getGemeente();
+    }
+    
 }
