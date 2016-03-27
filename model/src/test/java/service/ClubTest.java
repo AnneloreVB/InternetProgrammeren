@@ -101,10 +101,7 @@ public class ClubTest {
     public void removeAddress_geeft_Exception_als_id_is_nul(){
         club.removeAddress(0);
     }
-    @Test (expected = DBException.class)
-    public void removeAddress_geeft_Exception_als_id_niet_bestaat(){
-        club.removeAddress(5);
-    }
+    
     public void removeAddress_verwijdert_het_address(){
         club.removeAddress(geldigAdres.getId());
         assertFalse(club.getAllAddresses().contains(geldigAdres));
