@@ -4,17 +4,13 @@
     Author     : Annelore pc
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
     <body>
-        <%@include file="header.jsp" %>
         <h1>PersonOverview</h1>
-        <form method ="get" action="editPerson.htm">
+        
             <table>
                 <th>Rijksregisternr</th>
                 <th>Naam</th>
@@ -25,10 +21,12 @@
                         <td>${Person.naam}</td>
                         <td>${Person.voornaam}</td>
                         <td>${Person.adres}<td>
-                        <td><a href="editPerson.do?id=${Person.rijksregistersnr}"> edit</a></td>
+                        <td><a href="person/${Person.rijksregistersnr}.htm"> edit</a></td>
                     </tr>
                     </c:forEach>
             </table>
-        </form>
+        <form method ="GET" action="<c:url value="/person/new.htm"/>">
+            <input type="submit" value="New"/>
+            </form>
     </body>
 </html>

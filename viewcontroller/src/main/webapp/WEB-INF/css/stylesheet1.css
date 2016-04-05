@@ -7,6 +7,14 @@ and open the template in the editor.
     Created on : 2-apr-2016, 13:01:26
     Author     : Annelore pc
 */
-body{
-    background-color: blue;
+@CHARSET "UTF-8";
+
+body {
+	font-family: arial,sans-serif;
+	color: #303d11;
+	background-color: #303d11;
 }
+h1{
+    color: red;
+}
+

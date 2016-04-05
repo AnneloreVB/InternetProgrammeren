@@ -1,6 +1,12 @@
 
 package domain;
 
+import static com.oracle.jrockit.jfr.ContentType.Address;
+
+/**
+ *
+ * @author Annelore pc
+ */
 public class Address {
     
     private String straat;

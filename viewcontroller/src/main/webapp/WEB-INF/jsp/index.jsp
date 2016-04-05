@@ -4,9 +4,19 @@
 <html>
     
     <body>
-        <jsp:include page="header.jsp"/>
-        <h1>Home</h1>
-        <p> Lorem ipsum dolor sit amet, 
+            <nav> 
+                <ul>
+                    <li>
+                        <a href="<c:url value="/index.htm"/>" >Home</a> 
+                    </li>
+                    <li>
+                        <a href="<c:url value="/person.htm"/>">overview</a>  
+                    </li>
+                </ul>
+            </nav>
+        <main>
+            <h1>Home</h1>
+            <p> Lorem ipsum dolor sit amet, 
             consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient 
             montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -29,6 +39,7 @@
             Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis
             magna. Sed consequat, leo eget bibendum sodales, augue velit cursus
             nunc,
-        </p>
-    </body>     
+            </p> 
+        </main>
+    </body>
 </html>
