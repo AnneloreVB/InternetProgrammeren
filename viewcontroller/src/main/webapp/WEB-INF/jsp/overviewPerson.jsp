@@ -8,7 +8,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <jsp:include page="head.jsp"/>
     <body>
+        <jsp:include page="header.jsp"/>
         <h1>PersonOverview</h1>
         
             <table>
@@ -16,12 +18,13 @@
                 <th>Naam</th>
                 <th>Voornaam</th>
                 <th>Adres</th>
-                    <c:forEach var="Person" items="${Persons}">
+                    <c:forEach var="person" items="${persons}">
                     <tr>
-                        <td>${Person.naam}</td>
-                        <td>${Person.voornaam}</td>
-                        <td>${Person.adres}<td>
-                        <td><a href="person/${Person.rijksregistersnr}.htm"> edit</a></td>
+                        <td>${person.rijksregistersnr}</td>
+                        <td>${person.naam}</td>
+                        <td>${person.voornaam}</td>
+                        <td>${person.adres}<td>
+                        <td><a href="<c:url value="/person/${person.rijksregistersnr}.htm"/>"> edit</a></td>
                     </tr>
                     </c:forEach>
             </table>

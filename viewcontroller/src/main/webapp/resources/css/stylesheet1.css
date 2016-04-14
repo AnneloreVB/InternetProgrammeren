@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2-apr-2016, 13:01:26
+    Author     : Annelore pc
+*/
+@CHARSET "UTF-8";
+
+body {
+	font-family: corbel ,sans-serif;
+        
+	background-color: #808080;
+        border:10px;
+}
+nav{
+    font-size: 1.5em;
+    
+}
+ul{
+    border-top-color: #ffff66;
+    border-top-style: solid;
+    border-top-width: 0.5px;
+    border-bottom-color: #ffff66;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5px;
+}
+li{
+    display: inline;
+    text-align:center;
+    
+}
+li a{
+   text-decoration:none; 
+   color:black;
+   font-weight: bold;
+   
+}
+

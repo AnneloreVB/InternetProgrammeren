@@ -12,12 +12,14 @@ public class Person {
     private String voornaam;
     private Address adres;
     
+    public Person(){
+        
+    }
     public Person(String rijksregisternr,String naam, String voornaam, Address adres){
         setRijksregistersnr(rijksregisternr);
         setNaam(naam);
         setVoornaam(voornaam);
         setAdres(adres);
-        
     }
 
     public String getNaam() {
@@ -47,7 +49,7 @@ public class Person {
         }
         this.adres = adres;
     }
-    public String getrRijksregistersnr() {
+    public String getRijksregistersnr() {
         return rijksregistersnr;
     }
     private void setRijksregistersnr(String rijksregistersnr) {

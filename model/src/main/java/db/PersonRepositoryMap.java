@@ -40,9 +40,10 @@ public class PersonRepositoryMap implements PersonRepository {
         if(p == null){
             throw new DomainException("geef een geldige Person in");
         }
-        if(!persons.containsValue(p)){
-           persons.put(p.getrRijksregistersnr(), p);
+        if(this.contains(p.getRijksregistersnr())){
+           this.update(p);
         }
+        persons.put(p.getRijksregistersnr(), p);
     }
     public void update(Person p) {
         if(p == null){
@@ -50,7 +51,7 @@ public class PersonRepositoryMap implements PersonRepository {
         }
         
         for(Person pers : persons.values()){
-            if(pers.getrRijksregistersnr().equals(p.getrRijksregistersnr())){
+            if(pers.getRijksregistersnr().equals(p.getRijksregistersnr())){
                 pers = p;
             }
         }
@@ -73,6 +74,14 @@ public class PersonRepositoryMap implements PersonRepository {
                 }
             }
         }
+    }
+    public boolean contains(String rijksregistersnr){
+        for(Person p : persons.values()){
+            if(p.getRijksregistersnr().equals(rijksregistersnr)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

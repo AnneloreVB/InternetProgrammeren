@@ -2,18 +2,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    
+    <jsp:include page="head.jsp" />
     <body>
-            <nav> 
-                <ul>
-                    <li>
-                        <a href="<c:url value="/index.htm"/>" >Home</a> 
-                    </li>
-                    <li>
-                        <a href="<c:url value="/person.htm"/>">overview</a>  
-                    </li>
-                </ul>
-            </nav>
+        <jsp:include page="header.jsp"/>
+            
         <main>
             <h1>Home</h1>
             <p> Lorem ipsum dolor sit amet, 

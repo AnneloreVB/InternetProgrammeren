@@ -24,6 +24,9 @@ public class PersonService {
     public PersonService(){
         factory =  new PersonRepositoryFactory();
         repository = factory.getRepository(TypeDB.PersonMap);
+        Address a1= new Address("nollekensstraat",7,3061,"Leefdaal");
+        Person p1 =  new Person("r0457024","VB","Annelore",a1 );
+        repository.add(p1);
     }
     public Person getPerson(String rijksregisternr){
         return repository.get(rijksregisternr);
