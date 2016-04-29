@@ -6,6 +6,9 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +16,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Grijze Gids</h1>
+        <h1><spring:message code="index.h1" text="Grijze gids"/></h1>
         <nav> 
                 <ul>
                     <li>
@@ -21,7 +24,7 @@
                         
                     </li>
                     <li>
-                        <a href="<c:url value="/person.htm"/>">overview</a>  
+                        <a href="<c:url value="/person.htm"/>">Overzicht</a>  
                     </li>
                 </ul>
             </nav>

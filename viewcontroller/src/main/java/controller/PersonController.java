@@ -40,7 +40,7 @@ public class PersonController {
         return new ModelAndView("personForm","person", new Person());
     }
     @RequestMapping(method = RequestMethod.POST)
-    public String save(HttpServletRequest request){
+    /*public String save(HttpServletRequest request){
         try{
         String rijksregistersnr = request.getParameter("rijksregistersnr");
         String naam = request.getParameter("naam");
@@ -60,7 +60,12 @@ public class PersonController {
         }
         
         return "redirect:/person.htm";
+    }*/
+    public String save(@ModelAttribute("person") Person person, BindingResult result){
+        service.addPerson(person);
+        return "redirect:/person.htm";
     }
+            
     @RequestMapping(value="/{rijksregistersnr}", method = RequestMethod.GET)
     public ModelAndView getEditForm(@PathVariable String rijksregistersnr){
         return new ModelAndView("personForm","person",service.getPerson(rijksregistersnr));

@@ -11,9 +11,8 @@ and open the template in the editor.
 
 body {
 	font-family: corbel ,sans-serif;
-        
+        padding: 5px;
 	background-color: #808080;
-        border:10px;
 }
 nav{
     font-size: 1.5em;
@@ -22,10 +21,10 @@ nav{
 ul{
     border-top-color: #ffff66;
     border-top-style: solid;
-    border-top-width: 0.5px;
+    border-top-width: 2px;
     border-bottom-color: #ffff66;
     border-bottom-style: solid;
-    border-bottom-width: 0.5px;
+    border-bottom-width: 2px;
 }
 li{
     display: inline;
@@ -38,4 +37,20 @@ li a{
    font-weight: bold;
    
 }
+table{
+   border: snow solid 0.5px; 
+   padding: 10px;
+   margin: 10px;
+}
+th{
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+td{
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
 

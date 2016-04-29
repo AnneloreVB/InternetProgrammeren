@@ -6,49 +6,60 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
     <jsp:include page="head.jsp"/>
     <body>
-        <h1>Voeg persoon toe</h1>
+        <h2>Voeg persoon toe</h2>
         
-        <form method="POST" action="<c:url value="/person.htm"/>">
+        <c:url var="url" value="/person.htm"/>
+        <form:form action="${url}" method="POST" commandName="person">
             <p>
-                <label>Rijksregistersnr</label>
-                <input name="rijksregistersnr"  value="${person.rijksregistersnr}"/>
+                <label><spring:message code="form.rijksregistersnr" text="Rijksregistersnr"/></label>
+                <form:input path="rijksregistersnr" ></form:input>
+                <form:errors path="rijksregistersnr"></form:errors>
             </p>
             
             <p>
-                <label>Naam</label>
-                <input name="naam" value="${person.naam}">
+                <label><spring:message code="form.naam" text="Naam"/></label>
+                <form:input path="naam" ></form:input>
+                <form:errors path="naam"></form:errors>
             </p>
             <p>
-                <label>Voornaam</label>
-                <input name="voornaam" value="${person.voornaam}">
+                <label><spring:message code="form.voornaam" text="Voornaam"/></label>
+                <form:input path="voornaam" ></form:input>
+                <form:errors path="voornaam"></form:errors>
             </p>
             <p>
                 <label>Straat</label>
-                <input name="straat" value="${person.adres.straat}">
+                <form:input path="adres.straat" ></form:input>
+                
             </p>
              <p>
                 <label>Huisnr</label>
-                <input name="huisnr" value="${person.adres.huisnr}">
+                <form:input path="adres.huisnr" ></form:input>
+                
             </p>
             <p>
                 <label>Bus</label>
-                <input name="bus" value="${person.adres.bus}">
+                <form:input path="adres.bus" ></form:input>
             </p>
             <p>
                 <label>Postcode</label>
-                <input name="postcode" value="${person.adres.postcode}">
+                <form:input path="adres.postcode" ></form:input>
+                
             </p>
             <p>
                 <label>Gemeente</label>
-                <input name="gemeente" value="${person.adres.gemeente}">
+                <form:input path="adres.gemeente" ></form:input>
+                
             </p>
             <p>
                 <input name="save" type="submit" value="save">
             </p>
-        </form>
+        </form:form>
     </body>
 </html>

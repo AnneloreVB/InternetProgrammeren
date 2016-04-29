@@ -6,15 +6,17 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
     <jsp:include page="head.jsp"/>
     <body>
         <jsp:include page="header.jsp"/>
-        <h1>PersonOverview</h1>
+        <h2>Personen</h2>
         
             <table>
-                <th>Rijksregisternr</th>
+                <th></th>
                 <th>Naam</th>
                 <th>Voornaam</th>
                 <th>Adres</th>
