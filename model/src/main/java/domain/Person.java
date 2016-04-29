@@ -4,9 +4,14 @@
  * and open the template in the editor.
  */
 package domain;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
 
 public class Person {
-    
+    @Id  
     private String rijksregistersnr;
     private String naam;
     private String voornaam;
@@ -21,11 +26,17 @@ public class Person {
         setVoornaam(voornaam);
         setAdres(adres);
     }
+    public Person(String rijksregisternr,String naam, String voornaam, String straat, int huisnr, String bus,int postcode,String gemeente){
+        setRijksregistersnr(rijksregisternr);
+        setNaam(naam);
+        setVoornaam(voornaam);
+        setAdres(new Address(straat,huisnr,bus,postcode,gemeente));
+    }
 
     public String getNaam() {
         return naam;
     }
-    private void setNaam(String naam) {
+    public void setNaam(String naam) {
         if(naam == null){
             throw new DomainException("geef geldige naam in");
         }
@@ -34,7 +45,7 @@ public class Person {
     public String getVoornaam() {
         return voornaam;
     }
-    private void setVoornaam(String voornaam) {
+    public void setVoornaam(String voornaam) {
         if(voornaam == null){
             throw new DomainException("geef geldige voornaam in");
         }
@@ -43,7 +54,7 @@ public class Person {
      public Address getAdres() {
         return adres;
     }
-    private void setAdres(Address adres) {
+    public void setAdres(Address adres) {
         if(adres == null){
             throw new DomainException("geef geldig adres in");
         }
@@ -52,12 +63,11 @@ public class Person {
     public String getRijksregistersnr() {
         return rijksregistersnr;
     }
-    private void setRijksregistersnr(String rijksregistersnr) {
+    public void setRijksregistersnr(String rijksregistersnr) {
         if(rijksregistersnr == null){
             throw new DomainException("geef geldig rijksregistersnr in");
         }
         this.rijksregistersnr = rijksregistersnr;
     }
-   
-    
+       
 }

@@ -16,16 +16,14 @@ public class AddressService {
     
     private AddressRepositoryFactory factory;
     private AddressRepository repository;
-    private int lastRecentlyUsedId;
+    
     
     public AddressService(){
         factory = new AddressRepositoryFactory();
-        this.repository = factory.getRepository(TypeDB.AddressMap);
-        lastRecentlyUsedId =0;
+        this.repository = factory.getRepository(TypeDB.AddressDB);
+        
     }
     public void addAddress(Address address){
-        address.setId(getLastRecentlyUsedId()+1);
-        setLastRecentlyUsedId(getLastRecentlyUsedId()+1);
         repository.add(address);
     }
     public Address getAddress(int id){
@@ -40,10 +38,5 @@ public class AddressService {
     public void removeAddress(int id){
         repository.delete(id);
     }
-    public int getLastRecentlyUsedId(){
-        return this.lastRecentlyUsedId;
-    }
-    private void setLastRecentlyUsedId(int id){
-        this.lastRecentlyUsedId = id;
-    }
+    
 }

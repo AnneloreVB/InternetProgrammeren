@@ -23,10 +23,10 @@ public class PersonService {
     
     public PersonService(){
         factory =  new PersonRepositoryFactory();
-        repository = factory.getRepository(TypeDB.PersonMap);
-        Address a1= new Address("nollekensstraat",7,3061,"Leefdaal");
+        repository = factory.getRepository(TypeDB.PersonDB);
+        /*Address a1= new Address("nollekensstraat",70,3061,"Leefdaal");
         Person p1 =  new Person("r0457024","VB","Annelore",a1 );
-        repository.add(p1);
+        repository.add(p1);*/
     }
     public Person getPerson(String rijksregisternr){
         return repository.get(rijksregisternr);
@@ -50,8 +50,6 @@ public class PersonService {
     public ArrayList<Person> getAll(){
         return repository.getAll();
     }
-    public void betaal(String naam, String voornaam){
-        repository.betaal(naam, voornaam);
-    }
+    
     
 }

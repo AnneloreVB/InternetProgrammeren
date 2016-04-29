@@ -54,7 +54,6 @@ public class ClubTest {
     //
     // @Test
     // public void hello() {}
-    
     @Test
     public void test_addPerson_Voegt_person_toe(){
         club.addPerson(geldigeP);
@@ -82,6 +81,7 @@ public class ClubTest {
         club.editPerson(personMetAnderAdres);
         assertEquals(personMetAnderAdres,club.getPerson("nummer"));
     }
+    @Test
     public void addAddress_voegt_address_toe_aan_DB(){
         club.addAddress(geldigAdres);
         assertTrue(club.getAllAddresses().contains(geldigAdres));

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-test-compile full logging</actionName>
+            <displayName>test-compile full logging</displayName>
+            <goals>
+                <goal>test-compile</goal>
+                <goal>-e</goal>
+                <goal>-X</goal>
+            </goals>
+        </action>
+    </actions>

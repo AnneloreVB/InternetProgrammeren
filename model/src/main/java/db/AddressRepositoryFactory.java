@@ -16,7 +16,7 @@ public class AddressRepositoryFactory {
             throw new DBException("geef geldig ADDRESS type in");
         }
         if(type.equals(TypeDB.AddressDB)){
-            //return new AddressRepositoryDB(); -> nog niet geïmplementeerd
+            return new AddressRepositoryDB("AddressPU");
         }
         return new AddressRepositoryMap();
     }

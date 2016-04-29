@@ -28,5 +28,5 @@ public interface PersonRepository {
     
     
     
-    void betaal(String s, String s1);
+    
 }

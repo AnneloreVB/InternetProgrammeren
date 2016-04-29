@@ -49,9 +49,7 @@ public class Club {
         return personService.getAll();
     }
     
-    public void betaalLid(String naam, String voornaam){
-        personService.betaal(naam, voornaam);  
-    }
+   
     public Address getAddressWithId(int id){
         return addressService.getAddress(id);
     }

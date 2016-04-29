@@ -16,7 +16,7 @@ public class PersonRepositoryFactory {
             throw new DBException("geef geldige PERSON db in");
         }
         if(type.equals(TypeDB.PersonDB)){
-            // return new PersonRepositoryDB(); -> nog nie geïmplementeerd
+            return new PersonRepositoryDB("PersonPU");
         }
         return new PersonRepositoryMap();
     }

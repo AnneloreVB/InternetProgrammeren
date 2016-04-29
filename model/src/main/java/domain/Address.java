@@ -1,21 +1,30 @@
 
 package domain;
 
-import static com.oracle.jrockit.jfr.ContentType.Address;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Annelore pc
  */
-public class Address {
-    
+@Entity
+public class Address  {
+    @Id 
+    @GeneratedValue
+    private int id;
     private String straat;
     private int huisnr;
     private String bus;
     private int postcode;
     private String gemeente;
-    private static int id;
     
+    
+    public Address(){
+        
+    }
     public Address(String straat,int huisnr,String bus,int postcode,String gemeente){
         setStraat(straat);
         setHuisnr(huisnr);
@@ -28,10 +37,10 @@ public class Address {
     }
 
     public String getStraat() {
-        return straat;
+        return this.straat;
     }
 
-    private void setStraat(String straat){
+    public void setStraat(String straat){
         if(straat == null){
             throw new DomainException("geef geldige straat in");
         }
@@ -42,7 +51,7 @@ public class Address {
         return huisnr;
     }
 
-    private void setHuisnr(int huisnr){
+    public void setHuisnr(int huisnr){
        if(huisnr == 0){
            throw new DomainException("geef geldig huisnr in");
        }
@@ -53,14 +62,14 @@ public class Address {
         return bus;
     }
     
-    private void setBus(String bus) {
+    public void setBus(String bus) {
         this.bus = bus;
     }
 
     public int getPostcode() {
         return postcode;
     }
-    private void setPostcode(int postcode){
+    public void setPostcode(int postcode){
         if(postcode == 0){
             throw new DomainException("geef een geldige postcode in");
         }
@@ -71,7 +80,7 @@ public class Address {
         return gemeente;
     }
 
-    private void setGemeente(String gemeente){
+    public void setGemeente(String gemeente){
         if(gemeente == null){
             throw new DomainException("geef geldige gemeente in");
         }
