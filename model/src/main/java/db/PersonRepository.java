@@ -18,7 +18,7 @@ public interface PersonRepository {
     
     Person get(String rijksregisternr);
 
-    ArrayList<Person> getAll();
+    List<Person> getAll();
 
     void add(Person person);
 

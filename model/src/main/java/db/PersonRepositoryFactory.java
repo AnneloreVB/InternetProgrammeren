@@ -16,7 +16,7 @@ public class PersonRepositoryFactory {
             throw new DBException("geef geldige PERSON db in");
         }
         if(type.equals(TypeDB.PersonDB)){
-            return new PersonRepositoryDB("PersonPU");
+            return new PersonRepositoryDB("DomainPU");
         }
         return new PersonRepositoryMap();
     }

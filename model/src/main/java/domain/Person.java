@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package domain;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-
+@Table
 public class Person {
     @Id  
     private String rijksregistersnr;
     private String naam;
     private String voornaam;
+    @OneToOne(cascade = CascadeType.ALL)
     private Address adres;
     
     public Person(){

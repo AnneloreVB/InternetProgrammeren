@@ -13,6 +13,7 @@ import domain.Address;
 import domain.DomainException;
 import domain.Person;
 import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -20,10 +21,11 @@ public class PersonService {
     
     private PersonRepositoryFactory factory;
     private PersonRepository repository;
+    private AddressService addressService;
     
     public PersonService(){
         factory =  new PersonRepositoryFactory();
-        repository = factory.getRepository(TypeDB.PersonDB);
+        repository = factory.getRepository(TypeDB.PersonDB);//TODO via param. werken
         /*Address a1= new Address("nollekensstraat",70,3061,"Leefdaal");
         Person p1 =  new Person("r0457024","VB","Annelore",a1 );
         repository.add(p1);*/
@@ -35,6 +37,7 @@ public class PersonService {
         if(p == null){
             throw new DomainException("geef geldige persoon in");
         }
+        addressService.addAddress(p.getAdres());
         repository.add(p);
     }
     public void remove(String rijksregisternr){
@@ -47,8 +50,8 @@ public class PersonService {
         } 
         repository.update(p);
     }
-    public ArrayList<Person> getAll(){
-        return repository.getAll();
+    public List<Person> getAll(){
+        return  repository.getAll();
     }
     
     

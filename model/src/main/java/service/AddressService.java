@@ -30,7 +30,7 @@ public class AddressService {
         return repository.get(id);
     }
     public ArrayList<Address> getAll(){
-        return repository.getAll();
+        return (ArrayList<Address>) repository.getAll();
     }
     public void updateAddress(Address address){
         repository.update(address);

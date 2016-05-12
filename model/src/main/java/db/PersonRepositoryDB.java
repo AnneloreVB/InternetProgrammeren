@@ -7,6 +7,7 @@ package db;
 
 import domain.Person;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -47,10 +48,10 @@ public class PersonRepositoryDB implements PersonRepository{
     }
 
     @Override
-    public ArrayList<Person> getAll() {
+    public List<Person> getAll() {
         try{
-            Query query = manager.createQuery("slect p from Person p");
-            return (ArrayList<Person>) query.getResultList();
+            Query query = manager.createQuery("select p from Person p");
+            return query.getResultList();
         }
         catch(Exception e){
             throw new DBException(e.getMessage());
