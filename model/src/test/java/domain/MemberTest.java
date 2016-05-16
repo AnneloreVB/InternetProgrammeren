@@ -40,11 +40,7 @@ public class MemberTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
     
     @Test 
     public void test_Constructor_Works_With_isBetaald_Is_false(){

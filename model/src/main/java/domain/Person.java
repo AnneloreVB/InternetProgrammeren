@@ -17,7 +17,7 @@ public class Person {
     private String rijksregistersnr;
     private String naam;
     private String voornaam;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL) 
     private Address adres;
     
     public Person(){

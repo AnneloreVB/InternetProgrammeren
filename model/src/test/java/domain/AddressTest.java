@@ -38,11 +38,7 @@ public class AddressTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
     @Test (expected = DomainException.class)
     public void test_Constructor_Works_With_straat_Is_NULL(){
         Address a = new Address(null,12,"b",1000,"Brussel");

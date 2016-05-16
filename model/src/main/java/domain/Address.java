@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * @author Annelore pc
  */
 @Entity
-public class Address  {
+public class Address  { 
     @Id 
     @GeneratedValue
     private int id;

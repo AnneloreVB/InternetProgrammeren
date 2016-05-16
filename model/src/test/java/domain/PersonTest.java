@@ -41,11 +41,6 @@ public class PersonTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
     @Test (expected = DomainException.class)
     public void test_Constructor_Works_With_Rijksregister_Is_NULL(){
         Person p = new Person(null,"Jansens","Jan",geldigAdres);

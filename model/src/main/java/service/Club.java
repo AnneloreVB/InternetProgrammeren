@@ -23,6 +23,9 @@ public class Club {
         personService = new PersonService();
         addressService = new AddressService();
     }
+    public Club(String geheugen){
+        //TODO string mee doorgegeven aan constructoren services
+    }
     
     public void addPerson(Person p){
         if(p == null){
