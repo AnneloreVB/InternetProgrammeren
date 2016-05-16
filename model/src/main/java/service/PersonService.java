@@ -7,12 +7,8 @@ package service;
 
 import db.PersonRepository;
 import db.PersonRepositoryFactory;
-import db.PersonRepositoryMap;
-import db.TypeDB;
-import domain.Address;
 import domain.DomainException;
 import domain.Person;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,9 +19,9 @@ public class PersonService {
     private PersonRepository repository;
     private AddressService addressService;
     
-    public PersonService(){
+    public PersonService(String geheugen){
         factory =  new PersonRepositoryFactory();
-        repository = factory.getRepository(TypeDB.PersonDB);//TODO via param. werken
+        repository = factory.getRepository(geheugen);
         /*Address a1= new Address("nollekensstraat",70,3061,"Leefdaal");
         Person p1 =  new Person("r0457024","VB","Annelore",a1 );
         repository.add(p1);*/

@@ -18,9 +18,9 @@ public class AddressService {
     private AddressRepository repository;
     
     
-    public AddressService(){
+    public AddressService(String geheugen){
         factory = new AddressRepositoryFactory();
-        this.repository = factory.getRepository(TypeDB.AddressDB);
+        this.repository = factory.getRepository(geheugen);
         
     }
     public void addAddress(Address address){

@@ -11,11 +11,8 @@ package db;
  */
 public class PersonRepositoryFactory {
     
-    public PersonRepository getRepository(TypeDB type){
-        if(type.equals(TypeDB.AddressDB) || type.equals(TypeDB.AddressMap)){
-            throw new DBException("geef geldige PERSON db in");
-        }
-        if(type.equals(TypeDB.PersonDB)){
+    public PersonRepository getRepository(String geheugen){
+        if(geheugen.equals("DB")){
             return new PersonRepositoryDB("DomainPU");
         }
         return new PersonRepositoryMap();

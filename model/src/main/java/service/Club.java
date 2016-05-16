@@ -20,11 +20,11 @@ public class Club {
     private AddressService addressService;
     
     public Club(){
-        personService = new PersonService();
-        addressService = new AddressService();
+        this("DB");
     }
     public Club(String geheugen){
-        //TODO string mee doorgegeven aan constructoren services
+        personService = new PersonService(geheugen);
+        addressService = new AddressService(geheugen);
     }
     
     public void addPerson(Person p){
