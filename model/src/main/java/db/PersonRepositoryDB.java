@@ -62,7 +62,7 @@ public class PersonRepositoryDB implements PersonRepository{
     public void add(Person person) {
         try{
             manager.getTransaction().begin();
-            manager.persist(person);
+            manager.merge(person);
             manager.flush();
             manager.getTransaction().commit();
         }

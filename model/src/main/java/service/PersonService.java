@@ -33,7 +33,7 @@ public class PersonService {
         if(p == null){
             throw new DomainException("geef geldige persoon in");
         }
-        addressService.addAddress(p.getAdres());
+        //addressService.addAddress(p.getAdres());
         repository.add(p);
     }
     public void remove(String rijksregisternr){
