@@ -21,6 +21,6 @@ import service.Club;
 public class ApplicationConfig { 
     @Bean
      public Club service() {
-         return new Club("Memory");
+         return new Club("MAP");
      }
 }
