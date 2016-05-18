@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 package domain;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table
 public class Person {
@@ -17,7 +21,7 @@ public class Person {
     private String rijksregistersnr;
     private String naam;
     private String voornaam;
-    @OneToOne(cascade = CascadeType.ALL) 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
     private Address adres;
     
     public Person(){
@@ -54,6 +58,7 @@ public class Person {
         }
         this.voornaam = voornaam;
     }
+    
      public Address getAdres() {
         return adres;
     }

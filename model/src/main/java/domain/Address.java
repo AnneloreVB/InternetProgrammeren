@@ -1,6 +1,7 @@
 
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,7 +11,8 @@ import javax.persistence.Table;
  *
  * @author Annelore pc
  */
-@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity 
 public class Address  { 
     @Id 
     @GeneratedValue

@@ -1,4 +1,4 @@
-package Initializer;
+package initializer;
 
 
 import javax.servlet.ServletContext;

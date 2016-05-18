@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import service.Club;
 
 @RestController
-@RequestMapping("/Person")
+@RequestMapping("/person")
 public class PersonRestController {
     @Autowired
     Club service;

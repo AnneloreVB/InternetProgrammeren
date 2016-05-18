@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Initializer;
+package initializer;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,7 +16,7 @@ import service.Club;
  * @author Annelore pc
  */
 @Configuration
-@ComponentScan("Personcontroller")
+@ComponentScan("controller")
 @EnableWebMvc  
 public class ApplicationConfig { 
     @Bean
