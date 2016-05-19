@@ -6,7 +6,8 @@
 package db;
 
 import domain.Address;
-import java.util.List;
+
+import java.util.Collection;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.util.List;
 public interface AddressRepository {
     Address get(int id);
 
-    List<Address> getAll();
+    Collection<Address> getAll();
 
     void add(Address adres);
 

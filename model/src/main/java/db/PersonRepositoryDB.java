@@ -6,13 +6,12 @@
 package db;
 
 import domain.Person;
-import java.util.ArrayList;
-import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
+import java.util.Collection;
 
 /**
  *
@@ -48,7 +47,7 @@ public class PersonRepositoryDB implements PersonRepository{
     }
 
     @Override
-    public List<Person> getAll() {
+    public Collection<Person> getAll() {
         try{
             Query query = manager.createQuery("select p from Person p");
             return query.getResultList();

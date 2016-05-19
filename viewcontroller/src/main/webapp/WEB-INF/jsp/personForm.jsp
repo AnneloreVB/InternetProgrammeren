@@ -15,46 +15,45 @@
     <body>
         <h2>Voeg persoon toe</h2>
         
-        <c:url var="url" value="/person.htm"/>
-        <form:form action="${url}" method="POST" commandName="person">
+        <form:form class="formulier" method="POST" commandName="person">
             <p>
-                <label><spring:message code="form.rijksregistersnr" text="Rijksregistersnr"/></label>
-                <form:input path="rijksregistersnr" ></form:input>
-                <form:errors path="rijksregistersnr"></form:errors>
+                <label for="rijksregistersnr"><spring:message code="form.rijksregistersnr" text="Rijksregistersnr"/></label>
+                <form:input id="rijksregistersnr" path="rijksregistersnr" ></form:input>
+                <form:errors class="error" path="rijksregistersnr"></form:errors>
             </p>
             
             <p>
-                <label><spring:message code="form.naam" text="Naam"/></label>
-                <form:input path="naam" ></form:input>
-                <form:errors path="naam"></form:errors>
+                <label for="naam"><spring:message code="form.naam" text="Naam"/></label>
+                <form:input id="naam" path="naam" ></form:input>
+                <form:errors class="error" path="naam"></form:errors>
             </p>
             <p>
-                <label><spring:message code="form.voornaam" text="Voornaam"/></label>
-                <form:input path="voornaam" ></form:input>
-                <form:errors path="voornaam"></form:errors>
+                <label for="voornaam"><spring:message code="form.voornaam" text="Voornaam"/></label>
+                <form:input id="voornaam" path="voornaam" ></form:input>
+                <form:errors class="error" path="voornaam"></form:errors>
             </p>
             <p>
-                <label>Straat</label>
-                <form:input path="adres.straat" ></form:input>
+                <label for="straat">Straat</label><!--TODO errors toevoegen-->
+                <form:input id="straat" path="adres.straat" ></form:input>
                 
             </p>
              <p>
-                <label>Huisnr</label>
-                <form:input path="adres.huisnr" ></form:input>
+                <label for="huisnr">Huisnr</label>
+                <form:input id="huisnr" path="adres.huisnr" type="number"></form:input>
                 
             </p>
             <p>
-                <label>Bus</label>
-                <form:input path="adres.bus" ></form:input>
+                <label for="bus">Bus</label>
+                <form:input id="bus" path="adres.bus" ></form:input>
             </p>
             <p>
-                <label>Postcode</label>
-                <form:input path="adres.postcode" ></form:input>
+                <label for="postcode">Postcode</label>
+                <form:input id="postcode" path="adres.postcode" type="number"></form:input>
                 
             </p>
             <p>
-                <label>Gemeente</label>
-                <form:input path="adres.gemeente" ></form:input>
+                <label for="gemeente">Gemeente</label>
+                <form:input id="gemeente" path="adres.gemeente" ></form:input>
                 
             </p>
             <p>

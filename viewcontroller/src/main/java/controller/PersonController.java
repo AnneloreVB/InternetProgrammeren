@@ -5,6 +5,7 @@ import domain.Address;
 import domain.Person;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -39,31 +40,12 @@ public class PersonController {
     public ModelAndView getnewForm(){
         return new ModelAndView("personForm","person", new Person());
     }
-    @RequestMapping(method = RequestMethod.POST)
-    /*public String save(HttpServletRequest request){
-        try{
-        String rijksregistersnr = request.getParameter("rijksregistersnr");
-        String naam = request.getParameter("naam");
-        String voornaam = request.getParameter("voornaam");
-        String straat = request.getParameter("straat");
-        int huisnr = Integer.parseInt(request.getParameter("huisnr"));
-        String bus = request.getParameter("bus");
-        int postcode = Integer.parseInt(request.getParameter("postcode"));
-        String gemeente = request.getParameter("gemeente");
-        Address adres = new Address(straat,huisnr,bus,postcode,gemeente);
-        Person person = new Person(rijksregistersnr,naam, voornaam, adres);
-        
-            service.addPerson(person);
-        }
-        catch(Exception e){
+    @RequestMapping(value="/new",method = RequestMethod.POST)
+    public String save(@Valid @ModelAttribute("person") Person person, BindingResult result){
+        if( result.hasErrors() )
             return "personForm";
-        }
-        
-        return "redirect:/person.htm";
-    }*/
-    public String save(@ModelAttribute("person") Person person, BindingResult result){
         service.addPerson(person);
-        return "redirect:/person.htm";
+        return "redirect:/person";
     }
             
     @RequestMapping(value="/{rijksregistersnr}", method = RequestMethod.GET)

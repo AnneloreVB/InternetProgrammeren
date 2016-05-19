@@ -7,6 +7,7 @@ package db;
 
 import domain.Address;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,8 +31,8 @@ public class AddressRepositoryMap implements AddressRepository {
     }
 
     @Override
-    public ArrayList<Address> getAll() {
-        return new ArrayList( adresses.values());
+    public Collection<Address> getAll() {
+        return new ArrayList<>( adresses.values());
     }
 
     @Override

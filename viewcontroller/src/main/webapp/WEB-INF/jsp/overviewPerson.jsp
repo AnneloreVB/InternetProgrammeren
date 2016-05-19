@@ -26,11 +26,11 @@
                         <td>${person.naam}</td>
                         <td>${person.voornaam}</td>
                         <td>${person.adres}<td>
-                        <td><a href="<c:url value="/person/${person.rijksregistersnr}.htm"/>"> edit</a></td>
+                        <td><a href="<c:url value="/person/${person.rijksregistersnr}"/>"> edit</a></td>
                     </tr>
                     </c:forEach>
             </table>
-        <form method ="GET" action="<c:url value="/person/new.htm"/>">
+        <form method ="GET" action="<c:url value="/person/new"/>">
             <input type="submit" value="New"/>
             </form>
     </body>

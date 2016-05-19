@@ -2,10 +2,10 @@
 package domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
  *
@@ -92,7 +92,7 @@ public class Address  {
         this.id = id;
     }
     public int getId(){
-        return this.getId();
+        return this.id;
     }
     public boolean equals(Object o){
         if(o instanceof Address){

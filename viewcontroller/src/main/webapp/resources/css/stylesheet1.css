@@ -52,5 +52,9 @@ td{
     padding-right: 10px;
     
 }
+.formulier label{
+    width: 200px;
+    display: inline-block
+}
 
 

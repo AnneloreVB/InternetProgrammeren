@@ -10,7 +10,8 @@ import db.PersonRepositoryFactory;
 import domain.Address;
 import domain.DomainException;
 import domain.Person;
-import java.util.List;
+
+import java.util.Collection;
 
 
 
@@ -47,8 +48,8 @@ public class PersonService {
         } 
         repository.update(p);
     }
-    public List<Person> getAll(){
-        return  repository.getAll();
+    public Collection<Person> getAll(){
+        return repository.getAll();
     }
     
     

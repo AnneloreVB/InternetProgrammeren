@@ -8,8 +8,7 @@ package service;
 import domain.Address;
 import domain.DomainException;
 import domain.Person;
-import java.util.ArrayList;
-import service.PersonService;
+
 import java.util.Collection;
 
 
@@ -56,7 +55,7 @@ public class Club {
     public Address getAddressWithId(int id){
         return addressService.getAddress(id);
     }
-    public ArrayList<Address> getAllAddresses(){
+    public Collection<Address> getAllAddresses(){
         return addressService.getAll();
     }
     public void addAddress(Address address){

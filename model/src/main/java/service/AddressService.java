@@ -5,12 +5,11 @@
  */
 package service;
 
-import db.AddressRepositoryMap;
 import db.AddressRepository;
 import db.AddressRepositoryFactory;
-import db.TypeDB;
 import domain.Address;
-import java.util.ArrayList;
+
+import java.util.Collection;
 
 public class AddressService {
     
@@ -29,8 +28,8 @@ public class AddressService {
     public Address getAddress(int id){
         return repository.get(id);
     }
-    public ArrayList<Address> getAll(){
-        return (ArrayList<Address>) repository.getAll();
+    public Collection<Address> getAll(){
+        return repository.getAll();
     }
     public void updateAddress(Address address){
         repository.update(address);

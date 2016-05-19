@@ -6,13 +6,12 @@
 package db;
 
 import domain.Address;
-import java.util.ArrayList;
-import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
+import java.util.Collection;
 
 /**
  *
@@ -49,7 +48,7 @@ public class AddressRepositoryDB implements AddressRepository{
     }
 
     @Override
-    public List<Address> getAll() {
+    public Collection<Address> getAll() {
         try{
             Query query = addressmanager.createQuery("select a from Address a");
             return query.getResultList();
