@@ -15,7 +15,7 @@
     <body>
         <h2>Voeg persoon toe</h2>
         
-        <form:form class="formulier" method="POST" commandName="person">
+        <form:form class="formulier" method="POST" action="new.htm" commandName="person">
             <p>
                 <label for="rijksregistersnr"><spring:message code="form.rijksregistersnr" text="Rijksregistersnr"/></label>
                 <form:input id="rijksregistersnr" path="rijksregistersnr" ></form:input>

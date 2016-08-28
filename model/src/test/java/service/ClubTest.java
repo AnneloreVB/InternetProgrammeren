@@ -24,32 +24,23 @@ import static org.junit.Assert.*;
  */
 public class ClubTest {
     
-    /*Club club = new Club();
+    Club club = new Club();
     Address geldigAdres = new Address("Vlostraat",12,"B",1000,"Brussel");
     Address geldigAdres2 = new Address("Vlostraat",8,"B",1000,"Brussel");
     Person geldigeP = new Person("nummer","Jansens","Jan",geldigAdres);
     Person personMetAnderAdres = new Person("nummer","Jansens","Jan",geldigAdres2);
     
     public ClubTest() {
+        
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     @Test
+    public void test_addAddress_werkt(){
+        club.addAddress(geldigAdres);
+    }
+    
+
+    /*@Test
     public void test_addPerson_Voegt_person_toe(){
         club.addPerson(geldigeP);
         assertFalse(club.getPerson("nummer") == null);

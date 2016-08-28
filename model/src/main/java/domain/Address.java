@@ -6,21 +6,37 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
  * @author Annelore pc
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity 
 public class Address  { 
     @Id 
     @GeneratedValue
     private int id;
+    
+    @NotBlank(message = "{NotBlank.Address.straat}")
+    @Size (min = 5, max = 50 , message = "{Size.Address.straat}" )
     private String straat;
+    
+    @NotNull(message = "{NotNull.Address.huisnr}") @Min(1) @Max(1000)
     private int huisnr;
+    
     private String bus;
+    
+    @NotNull (message = "{NotNull.Address.postcode}") @Min(4) @Max(5)
     private int postcode;
+    
+    @NotBlank(message = "{NotBlank.Address.gemeente}")
+    @Size (min = 2, max = 50 , message = "{Size.Address.gemeente}" )
     private String gemeente;
     
     

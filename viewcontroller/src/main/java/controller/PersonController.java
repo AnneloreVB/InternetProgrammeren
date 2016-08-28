@@ -32,6 +32,7 @@ public class PersonController {
     @Autowired
     private service.Club service;
     
+    
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getPersons(){
         return new ModelAndView("overviewPerson","persons",service.getAllPersons());
@@ -40,14 +41,16 @@ public class PersonController {
     public ModelAndView getnewForm(){
         return new ModelAndView("personForm","person", new Person());
     }
-    @RequestMapping(value="/new",method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute("person") Person person, BindingResult result){
-        if( result.hasErrors() )
-            return "personForm";
-        service.addPerson(person);
-        return "redirect:/person";
+    @RequestMapping(value="/new" ,method = RequestMethod.POST)
+    public String save(@Valid @ModelAttribute ("Person") Person person){
+        if(service.containsPerson(person)){
+            service.editPerson(person);
+        }
+        else{
+           service.addPerson(person); 
+        }
+       return "redirect:/person.htm";
     }
-            
     @RequestMapping(value="/{rijksregistersnr}", method = RequestMethod.GET)
     public ModelAndView getEditForm(@PathVariable String rijksregistersnr){
         return new ModelAndView("personForm","person",service.getPerson(rijksregistersnr));

@@ -50,7 +50,12 @@ public class Club {
     public Collection<Person> getAllPersons(){
         return personService.getAll();
     }
-    
+    public boolean containsPerson(Person p){
+        if(p == null){
+            throw new DomainException("geef geldige persoon in");
+        }
+        return personService.containsPerson(p);
+    }
    
     public Address getAddressWithId(int id){
         return addressService.getAddress(id);

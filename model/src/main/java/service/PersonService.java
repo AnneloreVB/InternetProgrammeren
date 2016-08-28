@@ -51,6 +51,17 @@ public class PersonService {
     public Collection<Person> getAll(){
         return repository.getAll();
     }
-    
+    public boolean containsPerson(Person p){
+        if(p == null){
+            throw new DomainException("geef geldige persoon in");
+        }
+        try{
+            this.getPerson(p.getRijksregistersnr());
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+    }
     
 }
