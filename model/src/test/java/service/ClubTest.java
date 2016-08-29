@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
  */
 public class ClubTest {
     
-    Club club = new Club();
+   /* Club club = new Club();
     Address geldigAdres = new Address("Vlostraat",12,"B",1000,"Brussel");
     Address geldigAdres2 = new Address("Vlostraat",8,"B",1000,"Brussel");
     Person geldigeP = new Person("nummer","Jansens","Jan",geldigAdres);

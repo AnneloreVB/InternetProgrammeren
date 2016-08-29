@@ -17,12 +17,13 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
 //@JsonIgnoreProperties(ignoreUnknown = true)
-@Entity
+
 @Table
+@Entity
 public class Person {
     @Id
-    @Size(min = 8,max = 8, message ="{Size.Person.rijksregistersnr}")
-    @Pattern(regexp = "^(r|R)[0-9]{7}$", message = "{Pattern.Person.rijksregistersnr}")
+    //@Size(min = 8,max = 8, message ="{Size.Person.rijksregistersnr}")
+    //@Pattern(regexp = "^(r|R)[0-9]{7}$", message = "{Pattern.Person.rijksregistersnr}")
     private String rijksregistersnr;
     
     @NotBlank(message = "{NotBlank.Person.naam}")
@@ -32,7 +33,7 @@ public class Person {
     private String voornaam;
     
     @Valid
-    @OneToOne//(cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
     private Address adres;
     
     public Person(){

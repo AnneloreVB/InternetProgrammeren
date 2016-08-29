@@ -12,13 +12,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.Collection;
+import javax.persistence.PersistenceUnit;
 
 /**
  *
  * @author Annelore pc
  */
 public class PersonRepositoryDB implements PersonRepository{
-//    @PersistenceUnit
+    @PersistenceUnit
     private EntityManagerFactory factory;
     private EntityManager manager;
     
@@ -58,10 +59,10 @@ public class PersonRepositoryDB implements PersonRepository{
     }
 
     @Override
-    public void add(Person person) {
+    public void add(Person object) {
         try{
             manager.getTransaction().begin();
-            manager.merge(person);
+            manager.persist(object);
             manager.flush();
             manager.getTransaction().commit();
         }
