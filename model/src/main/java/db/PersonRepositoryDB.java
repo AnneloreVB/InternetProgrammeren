@@ -14,6 +14,8 @@ import javax.persistence.Query;
 import java.util.Collection;
 import javax.persistence.PersistenceUnit;
 
+
+
 /**
  *
  * @author Annelore pc
@@ -49,26 +51,22 @@ public class PersonRepositoryDB implements PersonRepository{
 
     @Override
     public Collection<Person> getAll() {
-        try{
-            Query query = manager.createQuery("select p from Person p");
-            return query.getResultList();
-        }
-        catch(Exception e){
-            throw new DBException(e.getMessage());
-        }
+       Query query = manager.createQuery("SELECT e FROM Person e");
+       return query.getResultList();
     }
 
     @Override
     public void add(Person object) {
-        try{
+        //try{
             manager.getTransaction().begin();
             manager.persist(object);
             manager.flush();
+            manager.clear();
             manager.getTransaction().commit();
-        }
-        catch(Exception e){
+        //}
+        /*catch(Exception e){
             throw new DBException(e.getMessage());
-        }
+        }*/
     }
 
     @Override

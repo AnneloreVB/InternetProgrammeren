@@ -4,26 +4,22 @@
  * and open the template in the editor.
  */
 package domain;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
 //@JsonIgnoreProperties(ignoreUnknown = true)
 
-@Table
 @Entity
-public class Person {
+public class Person implements Serializable {
     @Id
-    //@Size(min = 8,max = 8, message ="{Size.Person.rijksregistersnr}")
-    //@Pattern(regexp = "^(r|R)[0-9]{7}$", message = "{Pattern.Person.rijksregistersnr}")
+    @Size(min = 8,max = 8, message ="{Size.Person.rijksregistersnr}")
+    @Pattern(regexp = "^(r|R)[0-9]{7}$", message = "{Pattern.Person.rijksregistersnr}")
     private String rijksregistersnr;
     
     @NotBlank(message = "{NotBlank.Person.naam}")
@@ -32,8 +28,8 @@ public class Person {
     @NotBlank(message = "{NotBlank.Person.voornaam}")
     private String voornaam;
     
-    @Valid
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
+    
+    @OneToOne(cascade = CascadeType.PERSIST )
     private Address adres;
     
     public Person(){
@@ -77,5 +73,7 @@ public class Person {
     public void setRijksregistersnr(String rijksregistersnr) {
         this.rijksregistersnr = rijksregistersnr;
     }
-       
+    public String toString(){
+        return this.getRijksregistersnr() + " "+ this.getNaam() + " "+ this.getVoornaam()+ " "+ this.getAdres();
+    }  
 }

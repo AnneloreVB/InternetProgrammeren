@@ -2,6 +2,7 @@
 package domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 //@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity 
-public class Address  { 
+public class Address implements Serializable  { 
     @Id 
     @GeneratedValue
     private int id;

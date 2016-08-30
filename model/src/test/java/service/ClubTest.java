@@ -10,6 +10,7 @@ import db.DBException;
 import domain.Address;
 import domain.DomainException;
 import domain.Person;
+import java.util.Collection;
 import service.Club;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -23,18 +24,15 @@ import static org.junit.Assert.*;
  * @author Annelore pc
  */
 public class ClubTest {
+   
+    private Club clubDB = new Club("DB");
     
-   /* Club club = new Club();
-    Address geldigAdres = new Address("Vlostraat",12,"B",1000,"Brussel");
-    Address geldigAdres2 = new Address("Vlostraat",8,"B",1000,"Brussel");
-    Person geldigeP = new Person("nummer","Jansens","Jan",geldigAdres);
-    Person personMetAnderAdres = new Person("nummer","Jansens","Jan",geldigAdres2);
     
     public ClubTest() {
         
     }
     
-    @Test
+    /*@Test
     public void test_addAddress_werkt(){
         club.addAddress(geldigAdres);
     }
@@ -96,5 +94,13 @@ public class ClubTest {
         club.addAddress(geldigAdres);
         club.updateAddress(geldigAdres2);
         assertEquals(club.getAddressWithId(geldigAdres.getId()), geldigAdres2);
+    }*/
+    /*@Test
+    public void getAllGeeftAllePersonsTerug(){
+        Person p = new Person("r0123456","Van Buekenhout","Annelore",new Address("Nollekensstraat",7,3061,"Leefdaal"));
+        clubDB.addPerson(p);
+        Collection<Person> persons = clubDB.getAllPersons();
+        int size = persons.size();
+        System.out.println(size);
     }*/
 }

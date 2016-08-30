@@ -23,7 +23,10 @@ public class PersonService {
     
     public PersonService(String geheugen){
         factory =  new PersonRepositoryFactory();
-        repository = factory.getRepository(geheugen);
+        repository = factory.getRepository(geheugen); 
+        /*Address a = new Address("Nollekensstraat",7,3061,"Leefdaal");
+        Person p = new Person("r0457024","Van Buekenhout","Annelore",a);
+        this.add(p);*/
     }
 
     public Person getPerson(String rijksregisternr){

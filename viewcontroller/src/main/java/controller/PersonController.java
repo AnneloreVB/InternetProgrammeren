@@ -34,7 +34,8 @@ public class PersonController {
             service.editPerson(person);
         }
         else{
-           service.addPerson(person); 
+            Person p = (Person)person;
+           service.addPerson(p); 
         }
        return "redirect:/person.htm";
     }
